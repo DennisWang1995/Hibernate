@@ -9,28 +9,26 @@ import com.harold.hibernate.bean.User;
 
 public class UserTest {
 
-    public static void main(String[] args) {
-
-        // ?? Hibernate ????
+    // 加载 Hibernate 配置文件
         Configuration cfg = new Configuration().configure();
 
-        // ?? SessionFactory
+        // 新建 SessionFactory
          @SuppressWarnings("deprecation")
         SessionFactory sf = cfg.buildSessionFactory();
 
-        // ?? Session
+        // 开启 Session
         Session session = sf.openSession();
 
-        // ????
+        // 开启事务
         session.beginTransaction();
 
 
-        // ???? LOL ??
+        // 新建一个 LOL 群组
         Group group = new Group();
         group.setGroupname("LOL_Group");
 
 
-        // ??????
+        // 新建多个用户
         User user1 = new User();
         user1.setUsername("Levis");
         user1.setPassword("111");
@@ -39,19 +37,18 @@ public class UserTest {
         user2.setUsername("Lee");
         user2.setPassword("222");
 
-        // ?????????????????
+        // 设置多个用户都对应该群组（多对一）
         user1.setGroup(group);
         user2.setGroup(group);
 
-        // ??????
+        // 保存相关对象
         session.save(user1);
         session.save(user2);
         session.save(group);
 
-        // ??????? session
+        // 提交事务并关闭 session
         session.getTransaction().commit();
         session.close();
         sf.close();    
     }    
 }
-

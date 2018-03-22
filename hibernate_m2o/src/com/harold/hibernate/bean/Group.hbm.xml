@@ -4,6 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.harold.hibernate.bean">
 	<class name="Group" table="group_table">
+	<!--主键自增策略-->
 		<id name="id" column="group_table">
 			<generator class="native"></generator>
 		</id>

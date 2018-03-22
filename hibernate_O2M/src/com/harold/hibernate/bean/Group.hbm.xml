@@ -2,8 +2,10 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--对应映射的完整包名-->
 <hibernate-mapping package="com.harold.hibernate.bean">
 	<class name="Group" table="group_table">
+	<!--主键自增策略-->
 		<id name="id" column="group_table">
 			<generator class="native"></generator>
 		</id>
@@ -14,4 +16,4 @@
 			<one-to-many class="com.harold.hibernate.bean.User"/>
 		</set>
 	</class>
-</hibernate-mapping>
+</hibernate-mapping

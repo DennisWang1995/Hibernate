@@ -10,7 +10,8 @@
 		</id>
 		<property name="username" column="user_name"></property>
 		<property name="password" column="user_password"></property>
-		
+		<!-- 主要变化： 多对一的映射关系-->
+
 		<many-to-one name="group" column="group_id"></many-to-one>
 	</class>
 </hibernate-mapping>

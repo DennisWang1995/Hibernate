@@ -21,7 +21,7 @@ public class UserTest {
 		Session session = sf.openSession();
 		session.beginTransaction();
 
-		// ???? LOL ??
+		// 创建一个名 LOL的群组
 		Group group = new Group();
 		group.setGroupname("LOL_Group");
 
